@@ -1,28 +1,5 @@
 extends Node2D
 
-const SCROLLS = [
-	{
-		name = "Lava Stream",
-		spells = ["fire", "earth"]
-	},
-	{
-		name = "Bless",
-		spells = ["water", "light"]
-	},
-	{
-		name = "Raise the Dead",
-		spells = ["earth", "dark"]
-	},
-	{
-		name = "Golem Invocation",
-		spells = ["earth", "light"]
-	},
-	{
-		name = "Divine Bolt",
-		spells = ["thunder", "light"]
-	},
-]
-
 var score = 0
 
 var current_request = null
@@ -50,7 +27,7 @@ func compare_spells(scroll, spells):
 	return required == input
 
 func find_matching_scroll(spells):
-	for scroll in SCROLLS:
+	for scroll in Global.SCROLLS:
 		if compare_spells(scroll, spells):
 			return scroll
 	return null
@@ -59,8 +36,8 @@ func generate_new_request():
 	$UI.hide_request()
 	$RequestTimer.start()
 	yield($RequestTimer, "timeout")
-	var random_scroll = randi() % SCROLLS.size()
-	current_request = SCROLLS[random_scroll]
+	var random_scroll = randi() % Global.SCROLLS.size()
+	current_request = Global.SCROLLS[random_scroll]
 	$UI.show_request(current_request)
 
 func _on_Spells_scroll_submitted(spells):

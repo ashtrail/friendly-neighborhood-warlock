@@ -5,7 +5,7 @@ const required_score : int = 200
 
 const SCROLLS = [
 	{
-		name = "Lava Stream",
+		name = "Lava Gush",
 		spells = ["fire", "earth"]
 	},
 	{
@@ -17,12 +17,32 @@ const SCROLLS = [
 		spells = ["earth", "dark"]
 	},
 	{
-		name = "Golem Invocation",
+		name = "Summon Golem",
 		spells = ["earth", "light"]
 	},
 	{
 		name = "Divine Bolt",
 		spells = ["thunder", "light"]
+	},
+	{
+		name = "Sun Ray",
+		spells = ["fire", "light"]
+	},
+	{
+		name = "Smoke Bomb",
+		spells = ["fire", "water"]
+	},
+	{
+		name = "Rain Dance",
+		spells = ["fire", "water", "water"]
+	},
+	{
+		name = "Storm",
+		spells = ["fire", "water", "thunder"]
+	},
+	{
+		name = "Fiendfyre",
+		spells = ["fire", "dark"]
 	},
 ]
 
@@ -33,4 +53,13 @@ const TEXTURE_MAP = {
 	"thunder": preload("../sprites/elements/thunder.png"),
 	"light": preload("../sprites/elements/light.png"),
 	"dark": preload("../sprites/elements/dark.png"),
+}
+
+const COLOR_MAP = {
+	"fire": Color("#dd0000"),
+	"water": Color("#00b6dd"),
+	"earth": Color("#9c4224"),
+	"thunder": Color("ffe234"),
+	"light": Color("#fffcea"),
+	"dark": Color("#6f007c"),
 }

@@ -3,15 +3,6 @@ extends Node2D
 signal scroll_submitted(spells)
 signal scroll_canceled()
 
-const TEXTURE_MAP = {
-	"fire": preload("../sprites/elements/fire.png"),
-	"water": preload("../sprites/elements/water.png"),
-	"earth": preload("../sprites/elements/earth.png"),
-	"thunder": preload("../sprites/elements/thunder.png"),
-	"light": preload("../sprites/elements/light.png"),
-	"dark": preload("../sprites/elements/dark.png"),
-}
-
 var spells = []
 
 func _ready():
@@ -36,7 +27,7 @@ func add_spell(type):
 	spells.push_back(type)
 	var slots = $Slots.get_children()
 	var slot : Sprite = slots[index]
-	slot.texture = TEXTURE_MAP[type]
+	slot.texture = Global.TEXTURE_MAP[type]
 
 func _on_Element_spell_cast(type):
 	print("cast " + type)
