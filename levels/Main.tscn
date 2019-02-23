@@ -222,7 +222,7 @@ text = "Raise the Dead"
 wait_time = 0.5
 
 [node name="GameTimer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 60.0
 
 [connection signal="scroll_submitted" from="Spells" to="." method="_on_Spells_scroll_submitted"]
 [connection signal="request_rejected" from="UI" to="." method="_on_UI_request_rejected"]

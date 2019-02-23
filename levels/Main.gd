@@ -43,7 +43,11 @@ func add_score(value):
 	$UI.update_score(score)
 
 func compare_spells(scroll, spells):
-	return scroll.spells == spells
+	var required = scroll.spells.duplicate()
+	required.sort()
+	var input = spells.duplicate()
+	input.sort()
+	return required == input
 
 func find_matching_scroll(spells):
 	for scroll in SCROLLS:
