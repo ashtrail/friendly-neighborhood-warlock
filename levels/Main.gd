@@ -28,6 +28,7 @@ var score = 0
 var current_request = null
 
 func _ready():
+	randomize()
 	generate_new_request()
 	$GameTimer.start()
 
@@ -70,7 +71,7 @@ func _on_Spells_scroll_submitted(spells):
 	elif scroll.name == "GARBAGE":
 		# lose score
 		add_score(-10)
-		print("GARBAGE !")		
+		print("GARBAGE !")
 	else:
 		# lose score
 		add_score(-5)
@@ -84,5 +85,8 @@ func _on_UI_request_rejected():
 
 
 func _on_GameTimer_timeout():
-	# Game Over
-	pass # Replace with function body.
+	Global.score = score
+	if score >= Global.required_score:
+		get_tree().change_scene("res://levels/Win.tscn")
+	else:
+		get_tree().change_scene("res://levels/Lose.tscn")

@@ -19,6 +19,10 @@ config/name="Your Friendly Neighborhood Warlock"
 run/main_scene="res://levels/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://levels/Global.gd"
+
 [display]
 
 window/size/width=1728

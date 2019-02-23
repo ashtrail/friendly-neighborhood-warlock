@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://levels/EndScreen.gd" type="Script" id=1]
+[ext_resource path="res://levels/Main.tscn" type="PackedScene" id=2]
+[ext_resource path="res://theme.tres" type="Theme" id=3]
+
+[node name="Win" type="Node2D"]
+script = ExtResource( 1 )
+next_scene = ExtResource( 2 )
+
+[node name="UI" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 3 )
+
+[node name="Text" type="Label" parent="UI"]
+margin_left = 613.51
+margin_top = 537.676
+margin_right = 1042.51
+margin_bottom = 741.676
+text = "Win"
+align = 1
+valign = 1
+
+[node name="Score" type="Label" parent="UI"]
+margin_left = 613.51
+margin_top = 719.51
+margin_right = 1042.51
+margin_bottom = 923.51
+text = "100"
+align = 1
+valign = 1
+
+[node name="Restart" type="Button" parent="UI"]
+margin_left = 694.127
+margin_top = 1095.67
+margin_right = 961.127
+margin_bottom = 1171.67
+text = "Restart"
+
+[connection signal="pressed" from="UI/Restart" to="." method="_on_Restart_pressed"]
