@@ -6,7 +6,7 @@ var current_request = null
 
 func _ready():
 	randomize()
-	generate_new_request()
+	generate_new_request(true)
 	$GameTimer.start()
 
 func _process(_delta):
@@ -32,13 +32,14 @@ func find_matching_scroll(spells):
 			return scroll
 	return null
 
-func generate_new_request():
+func generate_new_request(first = false):
 	$UI.hide_request()
-	$RequestTimer.start()
-	yield($RequestTimer, "timeout")
-	var random_scroll = randi() % Global.SCROLLS.size()
-	current_request = Global.SCROLLS[random_scroll]
-	$UI.show_request(current_request)
+#	$RequestTimer.start()
+#	yield($RequestTimer, "timeout")
+	if first:
+		$Customer.init()
+	else:
+		$Customer.renew()
 
 func _on_Spells_scroll_submitted(spells):
 	var scroll = find_matching_scroll(spells)
@@ -71,3 +72,10 @@ func _on_GameTimer_timeout():
 		get_tree().change_scene("res://levels/Win.tscn")
 	else:
 		get_tree().change_scene("res://levels/Lose.tscn")
+
+
+func _on_Customer_ready_to_order():
+	print("wtf")
+	var random_scroll = randi() % Global.SCROLLS.size()
+	current_request = Global.SCROLLS[random_scroll]
+	$UI.show_request(current_request)

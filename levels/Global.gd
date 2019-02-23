@@ -63,3 +63,8 @@ const COLOR_MAP = {
 	"light": Color("#fffcea"),
 	"dark": Color("#6f007c"),
 }
+
+const CUSTOMER_TEXTURES = [
+	preload("../sprites/customers/01.png"),
+	preload("../sprites/customers/02.png")
+]
