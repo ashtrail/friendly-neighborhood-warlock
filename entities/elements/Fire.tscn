@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/elements/Element.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/elements/fire.png" type="Texture" id=2]
+
+[node name="Fire" instance=ExtResource( 1 )]
+type = "fire"
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
