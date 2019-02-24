@@ -58,7 +58,7 @@ __meta__ = {
 script = ExtResource( 4 )
 
 [node name="Warlock" parent="Spell" instance=ExtResource( 5 )]
-position = Vector2( 930.563, 600.545 )
+position = Vector2( 1014.53, 602.544 )
 
 [node name="Canvas" type="Position2D" parent="Spell"]
 position = Vector2( 1355.93, 532.5 )
@@ -242,7 +242,7 @@ text = "Raise the Dead"
 wait_time = 0.5
 
 [node name="GameTimer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 120.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -251,9 +251,9 @@ wait_time = 60.0
 [connection signal="scroll_submitted" from="Spells" to="." method="_on_Spells_scroll_submitted"]
 [connection signal="spell_cast" from="Spells" to="Spell" method="_on_Spells_spell_cast"]
 [connection signal="request_rejected" from="UI" to="." method="_on_UI_request_rejected"]
-[connection signal="pressed" from="UI/Submit" to="UI" method="_on_Submit_pressed"]
 [connection signal="pressed" from="UI/Submit" to="Spells" method="submit"]
-[connection signal="pressed" from="UI/Cancel" to="UI" method="_on_Cancel_pressed"]
+[connection signal="pressed" from="UI/Submit" to="UI" method="_on_Submit_pressed"]
 [connection signal="pressed" from="UI/Cancel" to="Spells" method="cancel"]
+[connection signal="pressed" from="UI/Cancel" to="UI" method="_on_Cancel_pressed"]
 [connection signal="pressed" from="UI/Request/Reject" to="UI" method="_on_Reject_pressed"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]

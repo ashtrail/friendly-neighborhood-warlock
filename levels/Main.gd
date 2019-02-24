@@ -55,17 +55,17 @@ func _on_Spells_scroll_submitted(spells):
 		var index = randi() % Global.SUCCESS_SFX.size()
 		var sfx : AudioStreamSample = Global.SUCCESS_SFX[index]
 		$AudioStreamPlayer.stream = sfx
-		add_score(5)
+		add_score(10)
 		generate_new_request()
 	elif scroll.name == "GARBAGE":
 		# lose score
 		$AudioStreamPlayer.stream = get_fail_sfx()
-		add_score(-10)
+		add_score(-5)
 		print("GARBAGE !")
 	else:
 		# lose score
 		$AudioStreamPlayer.stream = get_fail_sfx()
-		add_score(-5)
+		# add_score(-5)
 		print("BAD !")
 	$AudioStreamPlayer.play()
 

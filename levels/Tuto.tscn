@@ -1,0 +1,132 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://levels/Tuto.gd" type="Script" id=1]
+[ext_resource path="res://theme.tres" type="Theme" id=2]
+[ext_resource path="res://sprites/screens/spash_start_normal.png" type="Texture" id=3]
+[ext_resource path="res://sprites/screens/spash_start_clicked.png" type="Texture" id=4]
+[ext_resource path="res://sprites/screens/spash_start_hover.png" type="Texture" id=5]
+[ext_resource path="res://sprites/customers/knight.png" type="Texture" id=6]
+[ext_resource path="res://sprites/elements/fire.png" type="Texture" id=7]
+[ext_resource path="res://sprites/elements/light.png" type="Texture" id=8]
+[ext_resource path="res://sprites/elements/water.png" type="Texture" id=9]
+[ext_resource path="res://sprites/UI/cancel_normal.png" type="Texture" id=10]
+[ext_resource path="res://sprites/UI/submit_normal.png" type="Texture" id=11]
+[ext_resource path="res://sprites/UI/scroll.png" type="Texture" id=12]
+[ext_resource path="res://sprites/UI/reject.png" type="Texture" id=13]
+
+[node name="Tuto" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 2 )
+
+[node name="Start" type="TextureButton" parent="Control"]
+margin_left = -0.00012207
+margin_top = 2.0575
+margin_right = 1728.0
+margin_bottom = 2162.06
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+
+[node name="Label2" type="Label" parent="Control"]
+margin_left = 300.997
+margin_top = 108.039
+margin_right = 1826.0
+margin_bottom = 396.039
+text = "Customers will ask you for scrolls
+"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 284.981
+margin_top = 366.526
+margin_right = 1809.98
+margin_bottom = 728.526
+text = "You have to combine
+elements to create scrolls
+(either two or three, it's written 
+in the scroll name)
+"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="Control"]
+margin_left = 319.115
+margin_top = 648.361
+margin_right = 1761.11
+margin_bottom = 1009.36
+text = "You can cancel the elements you
+chose if you made a mistake
+Or submit it if you think it is
+the good combination"
+align = 1
+valign = 1
+
+[node name="Label4" type="Label" parent="Control"]
+margin_left = 326.129
+margin_top = 960.901
+margin_right = 1768.13
+margin_bottom = 1321.9
+text = "You have to guess the elements
+from the name of the scroll
+and complete enough requests
+to get 200 reputation points"
+align = 1
+valign = 1
+
+[node name="Label5" type="Label" parent="Control"]
+margin_left = 421.175
+margin_top = 1329.91
+margin_right = 1679.18
+margin_bottom = 1690.91
+text = "If you can't find the combination 
+you can always reject the
+customer's request but you will lose
+some reputation"
+align = 1
+valign = 1
+
+[node name="knight" type="Sprite" parent="."]
+position = Vector2( 261.689, 187.826 )
+scale = Vector2( 0.797788, 0.799157 )
+texture = ExtResource( 6 )
+
+[node name="fire" type="Sprite" parent="."]
+position = Vector2( 106.021, 496.51 )
+texture = ExtResource( 7 )
+
+[node name="light" type="Sprite" parent="."]
+position = Vector2( 255.587, 497.929 )
+scale = Vector2( 0.851064, 0.784314 )
+texture = ExtResource( 8 )
+
+[node name="water" type="Sprite" parent="."]
+position = Vector2( 397.845, 495.233 )
+scale = Vector2( 0.857143, 0.98 )
+texture = ExtResource( 9 )
+
+[node name="cancel_normal" type="Sprite" parent="."]
+position = Vector2( 238.772, 742.291 )
+scale = Vector2( 0.469794, 0.541098 )
+texture = ExtResource( 10 )
+
+[node name="submit_normal" type="Sprite" parent="."]
+position = Vector2( 261.554, 936.113 )
+scale = Vector2( 0.532237, 0.575786 )
+texture = ExtResource( 11 )
+
+[node name="scroll" type="Sprite" parent="."]
+position = Vector2( 248.679, 1203.93 )
+scale = Vector2( 1.57146, 1.72505 )
+texture = ExtResource( 12 )
+
+[node name="reject" type="Sprite" parent="."]
+position = Vector2( 234.798, 1498.42 )
+scale = Vector2( 1.95607, 1.94603 )
+texture = ExtResource( 13 )
+
+[connection signal="pressed" from="Control/Start" to="." method="_on_Start_pressed"]

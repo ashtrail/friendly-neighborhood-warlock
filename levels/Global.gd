@@ -10,7 +10,7 @@ const SCROLLS = [
 		spells = ["fire", "earth"]
 	},
 	{
-		name = "Bless",
+		name = "Health Potion",
 		spells = ["water", "light"]
 	},
 	{
@@ -30,7 +30,7 @@ const SCROLLS = [
 		spells = ["fire", "light"]
 	},
 	{
-		name = "Smoke Bomb",
+		name = "Cloud",
 		spells = ["fire", "water"]
 	},
 	{
@@ -44,6 +44,14 @@ const SCROLLS = [
 	{
 		name = "Fiendfyre",
 		spells = ["fire", "dark"]
+	},
+	{
+		name = "Poison",
+		spells = ["water", "dark"]
+	},
+	{
+		name = "Stone Wall",
+		spells = ["earth", "fire", "water"]
 	},
 ]
 

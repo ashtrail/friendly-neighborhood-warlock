@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://levels/EndScreen.gd" type="Script" id=1]
 [ext_resource path="res://levels/Main.tscn" type="PackedScene" id=2]
 [ext_resource path="res://theme.tres" type="Theme" id=3]
+[ext_resource path="res://sprites/screens/victory.png" type="Texture" id=4]
+[ext_resource path="res://sprites/screens/restart_normal.png" type="Texture" id=5]
+[ext_resource path="res://sprites/screens/restart_hover.png" type="Texture" id=6]
 
 [node name="Win" type="Node2D"]
 script = ExtResource( 1 )
@@ -13,7 +16,13 @@ margin_right = 40.0
 margin_bottom = 40.0
 theme = ExtResource( 3 )
 
+[node name="TextureRect" type="TextureRect" parent="UI"]
+margin_right = 1728.0
+margin_bottom = 2160.0
+texture = ExtResource( 4 )
+
 [node name="Text" type="Label" parent="UI"]
+visible = false
 margin_left = 613.51
 margin_top = 537.676
 margin_right = 1042.51
@@ -23,19 +32,19 @@ align = 1
 valign = 1
 
 [node name="Score" type="Label" parent="UI"]
-margin_left = 613.51
-margin_top = 719.51
-margin_right = 1042.51
-margin_bottom = 923.51
+margin_left = 854.507
+margin_top = 779.355
+margin_right = 1283.51
+margin_bottom = 983.355
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "100"
 align = 1
 valign = 1
 
-[node name="Restart" type="Button" parent="UI"]
-margin_left = 694.127
-margin_top = 1095.67
-margin_right = 961.127
-margin_bottom = 1171.67
-text = "Restart"
+[node name="Restart" type="TextureButton" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
 
 [connection signal="pressed" from="UI/Restart" to="." method="_on_Restart_pressed"]
