@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/reject2.wav-320a80ede56e904f5c766821cd4b23c6.sample"
+
+[deps]
+
+source_file="res://sfx/reject2.wav"
+dest_files=[ "res://.import/reject2.wav-320a80ede56e904f5c766821cd4b23c6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -21,3 +21,10 @@ func update_score(score):
 
 func _on_Reject_pressed():
 	emit_signal("request_rejected")
+
+func _on_Cancel_pressed():
+	print('wesh')
+	var index = randi() % Global.CANCEL_SFX.size()
+	var sfx : AudioStreamSample = Global.CANCEL_SFX[index]
+	$AudioStreamPlayer.stream = sfx
+	$AudioStreamPlayer.play()

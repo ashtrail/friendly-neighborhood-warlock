@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/light2.wav-b989a39f644a53a473fca550beb7131e.sample"
+
+[deps]
+
+source_file="res://sfx/light2.wav"
+dest_files=[ "res://.import/light2.wav-b989a39f644a53a473fca550beb7131e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

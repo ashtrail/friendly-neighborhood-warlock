@@ -68,3 +68,68 @@ const CUSTOMER_TEXTURES = [
 	preload("../sprites/customers/01.png"),
 	preload("../sprites/customers/02.png")
 ]
+
+const SPELL_SFX = {
+	"fire": [
+		preload("res://sfx/fire1.wav"),
+		preload("res://sfx/fire2.wav"),
+		preload("res://sfx/fire3.wav"),
+	],
+	"water": [
+		preload("res://sfx/water1.wav"),
+		preload("res://sfx/water2.wav"),
+		preload("res://sfx/water3.wav"),
+	],
+	"earth": [
+		preload("res://sfx/earth1.wav"),
+		preload("res://sfx/earth2.wav"),
+		preload("res://sfx/earth3.wav"),
+	],
+	"thunder": [
+		preload("res://sfx/thunder1.wav"),
+		preload("res://sfx/thunder2.wav"),
+		preload("res://sfx/thunder3.wav"),
+	],
+	"light": [
+		preload("res://sfx/light1.wav"),
+		preload("res://sfx/light2.wav"),
+		preload("res://sfx/light3.wav"),
+	],
+	"dark": [
+		preload("res://sfx/dark1.wav"),
+		preload("res://sfx/dark2.wav"),
+		preload("res://sfx/dark3.wav"),
+	],
+}
+
+const REJECT_SFX = [
+	preload("res://sfx/reject1.wav"),
+	preload("res://sfx/reject2.wav"),
+	preload("res://sfx/reject3.wav"),
+]
+
+#const SUBMIT_SFX = [
+#	preload("res://sfx/submit1.wav"),
+#	preload("res://sfx/submit2.wav"),
+#	preload("res://sfx/submit3.wav"),
+#]
+
+const SUCCESS_SFX = [
+	preload("res://sfx/success1.wav"),
+	preload("res://sfx/success2.wav"),
+	preload("res://sfx/success3.wav"),
+]
+
+
+const FAIL_SFX = [
+	preload("res://sfx/fail1.wav"),
+	preload("res://sfx/fail2.wav"),
+	preload("res://sfx/fail3.wav"),
+]
+
+const CANCEL_SFX = [
+	preload("res://sfx/cancel1.wav"),
+	preload("res://sfx/cancel2.wav"),
+	preload("res://sfx/cancel3.wav"),
+]
+

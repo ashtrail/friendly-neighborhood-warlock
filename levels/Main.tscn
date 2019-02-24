@@ -114,7 +114,6 @@ position = Vector2( 671.237, 1961.12 )
 position = Vector2( 1134.8, 1627.15 )
 
 [node name="UI" type="Control" parent="."]
-editor/display_folded = true
 margin_left = 249.113
 margin_top = 1443.91
 margin_right = 289.112
@@ -226,16 +225,22 @@ margin_right = 170.4
 margin_bottom = -1150.5
 text = "Raise the Dead"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="UI"]
+
 [node name="RequestTimer" type="Timer" parent="."]
 wait_time = 0.5
 
 [node name="GameTimer" type="Timer" parent="."]
 wait_time = 60.0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="ready_to_order" from="Customer" to="." method="_on_Customer_ready_to_order"]
 [connection signal="scroll_submitted" from="Spells" to="." method="_on_Spells_scroll_submitted"]
 [connection signal="request_rejected" from="UI" to="." method="_on_UI_request_rejected"]
+[connection signal="pressed" from="UI/Submit" to="UI" method="_on_Submit_pressed"]
 [connection signal="pressed" from="UI/Submit" to="Spells" method="submit"]
+[connection signal="pressed" from="UI/Cancel" to="UI" method="_on_Cancel_pressed"]
 [connection signal="pressed" from="UI/Cancel" to="Spells" method="cancel"]
 [connection signal="pressed" from="UI/Request/Reject" to="UI" method="_on_Reject_pressed"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]
