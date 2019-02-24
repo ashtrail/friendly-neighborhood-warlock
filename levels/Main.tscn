@@ -157,6 +157,7 @@ rect_scale = Vector2( 2.49873, 2.56532 )
 texture_normal = ExtResource( 19 )
 
 [node name="Request" type="Control" parent="UI"]
+editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
