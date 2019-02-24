@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://levels/Main.gd" type="Script" id=1]
 [ext_resource path="res://sprites/warlock_desk.png" type="Texture" id=2]
@@ -23,6 +23,52 @@
 [ext_resource path="res://sprites/UI/scroll.png" type="Texture" id=21]
 [ext_resource path="res://sprites/UI/reject.png" type="Texture" id=22]
 [ext_resource path="res://sprites/UI/result.png" type="Texture" id=23]
+
+[sub_resource type="Animation" id=1]
+resource_name = "idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Reject:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.796834 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ), Vector2( 1, 1 ), Vector2( 0.95, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Submit:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2.3, 2.3 ), Vector2( 2.4, 2.4 ), Vector2( 2.3, 2.3 ), Vector2( 2.2, 2.2 ), Vector2( 2.3, 2.3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cancel:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2.5, 2.5 ), Vector2( 2.6, 2.6 ), Vector2( 2.5, 2.5 ), Vector2( 2.4, 2.4 ), Vector2( 2.5, 2.5 ) ]
+}
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -115,9 +161,9 @@ position = Vector2( 1134.8, 1627.15 )
 
 [node name="UI" type="Control" parent="."]
 margin_left = 249.113
-margin_top = 1443.91
+margin_top = 1440.89
 margin_right = 289.112
-margin_bottom = 1483.91
+margin_bottom = 1480.89
 theme = ExtResource( 16 )
 script = ExtResource( 17 )
 
@@ -145,10 +191,18 @@ margin_left = 983.627
 margin_top = -141.907
 margin_right = 1156.63
 margin_bottom = -26.9066
-rect_scale = Vector2( 2.38889, 2.20833 )
+rect_scale = Vector2( 2.20476, 2.20476 )
 texture_normal = ExtResource( 18 )
 
 [node name="Cancel" type="TextureButton" parent="UI"]
+margin_left = -194.542
+margin_top = -120.28
+margin_right = -38.5421
+margin_bottom = -12.2803
+rect_scale = Vector2( 2.40476, 2.40476 )
+texture_normal = ExtResource( 19 )
+
+[node name="Cancel2" type="TextureButton" parent="UI"]
 margin_left = -194.542
 margin_top = -120.28
 margin_right = -38.5421
@@ -184,7 +238,13 @@ margin_left = 116.934
 margin_top = -1127.08
 margin_right = 201.934
 margin_bottom = -1039.08
+rect_scale = Vector2( 0.968722, 0.968722 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource( 22 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Request"]
+anims/idle = SubResource( 1 )
 
 [node name="Result" type="Control" parent="UI"]
 editor/display_folded = true
@@ -226,6 +286,9 @@ text = "Raise the Dead"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="UI"]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
+anims/idle = SubResource( 2 )
+
 [node name="RequestTimer" type="Timer" parent="."]
 wait_time = 0.5
 
@@ -241,5 +304,7 @@ wait_time = 60.0
 [connection signal="pressed" from="UI/Submit" to="Spells" method="submit"]
 [connection signal="pressed" from="UI/Cancel" to="UI" method="_on_Cancel_pressed"]
 [connection signal="pressed" from="UI/Cancel" to="Spells" method="cancel"]
+[connection signal="pressed" from="UI/Cancel2" to="UI" method="_on_Cancel_pressed"]
+[connection signal="pressed" from="UI/Cancel2" to="Spells" method="cancel"]
 [connection signal="pressed" from="UI/Request/Reject" to="UI" method="_on_Reject_pressed"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]

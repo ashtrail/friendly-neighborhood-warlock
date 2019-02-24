@@ -2,6 +2,10 @@ extends Control
 
 signal request_rejected()
 
+func _ready():
+	$AnimationPlayer.play("idle")
+	$Request/AnimationPlayer.play("idle")
+
 func show_request(scroll):
 	$Request/Name.text = scroll.name + " (" + str(scroll.spells.size()) + ")" 
 	$Request.visible = true
