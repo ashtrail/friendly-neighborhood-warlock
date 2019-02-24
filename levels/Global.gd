@@ -66,8 +66,10 @@ const COLOR_MAP = {
 }
 
 const CUSTOMER_TEXTURES = [
-	preload("../sprites/customers/01.png"),
-	preload("../sprites/customers/02.png")
+	preload("../sprites/customers/knight.png"),
+	preload("../sprites/customers/elf.png"),
+	preload("../sprites/customers/thief.png"),
+	preload("../sprites/customers/berserker.png"),
 ]
 
 const SPELL_SFX = {

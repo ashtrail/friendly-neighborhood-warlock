@@ -2,6 +2,7 @@ extends Node2D
 
 signal scroll_submitted(spells)
 signal scroll_canceled()
+signal spell_cast(type)
 
 var spells = []
 
@@ -31,6 +32,7 @@ func add_spell(type):
 
 func _on_Element_spell_cast(type):
 	print("cast " + type)
+	emit_signal("spell_cast", type)
 	if spells.size() < 3:
 		add_spell(type)
 	else:
