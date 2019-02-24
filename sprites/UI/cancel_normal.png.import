@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cancel.png-766b767e36f78df473934d530ab7a982.stex"
+path="res://.import/cancel_normal.png-84772a1cb2fed0eb63600380d5284d9c.stex"
 
 [deps]
 
-source_file="res://sprites/UI/cancel.png"
-dest_files=[ "res://.import/cancel.png-766b767e36f78df473934d530ab7a982.stex" ]
+source_file="res://sprites/UI/cancel_normal.png"
+dest_files=[ "res://.import/cancel_normal.png-84772a1cb2fed0eb63600380d5284d9c.stex" ]
 
 [params]
 

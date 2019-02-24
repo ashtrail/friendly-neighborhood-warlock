@@ -1,74 +1,35 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://levels/Main.gd" type="Script" id=1]
 [ext_resource path="res://sprites/warlock_desk.png" type="Texture" id=2]
 [ext_resource path="res://sprites/shop_background.png" type="Texture" id=3]
 [ext_resource path="res://sprites/customers/01.png" type="Texture" id=4]
 [ext_resource path="res://sprites/warlock.png" type="Texture" id=5]
-[ext_resource path="res://entities/Customer.tscn" type="PackedScene" id=6]
-[ext_resource path="res://sprites/spell_belt.png" type="Texture" id=7]
-[ext_resource path="res://levels/Spells.gd" type="Script" id=8]
-[ext_resource path="res://sprites/belt_eyes.png" type="Texture" id=9]
-[ext_resource path="res://entities/elements/Dark.tscn" type="PackedScene" id=10]
-[ext_resource path="res://entities/elements/Earth.tscn" type="PackedScene" id=11]
-[ext_resource path="res://entities/elements/Fire.tscn" type="PackedScene" id=12]
-[ext_resource path="res://entities/elements/Light.tscn" type="PackedScene" id=13]
-[ext_resource path="res://entities/elements/Thunder.tscn" type="PackedScene" id=14]
-[ext_resource path="res://entities/elements/Water.tscn" type="PackedScene" id=15]
-[ext_resource path="res://theme.tres" type="Theme" id=16]
-[ext_resource path="res://levels/UI.gd" type="Script" id=17]
-[ext_resource path="res://sprites/UI/submit.png" type="Texture" id=18]
-[ext_resource path="res://sprites/UI/cancel.png" type="Texture" id=19]
-[ext_resource path="res://sprites/UI/order.png" type="Texture" id=20]
-[ext_resource path="res://sprites/UI/scroll.png" type="Texture" id=21]
-[ext_resource path="res://sprites/UI/reject.png" type="Texture" id=22]
-[ext_resource path="res://sprites/UI/result.png" type="Texture" id=23]
-
-[sub_resource type="Animation" id=1]
-resource_name = "idle"
-length = 0.8
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Reject:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.796834 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.05, 1.05 ), Vector2( 1, 1 ), Vector2( 0.95, 0.95 ), Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "idle"
-length = 0.8
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Submit:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 2.3, 2.3 ), Vector2( 2.4, 2.4 ), Vector2( 2.3, 2.3 ), Vector2( 2.2, 2.2 ), Vector2( 2.3, 2.3 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Cancel:rect_scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 2.5, 2.5 ), Vector2( 2.6, 2.6 ), Vector2( 2.5, 2.5 ), Vector2( 2.4, 2.4 ), Vector2( 2.5, 2.5 ) ]
-}
+[ext_resource path="res://entities/Warlock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/Customer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://sprites/spell_belt.png" type="Texture" id=8]
+[ext_resource path="res://levels/Spells.gd" type="Script" id=9]
+[ext_resource path="res://sprites/belt_eyes.png" type="Texture" id=10]
+[ext_resource path="res://entities/elements/Dark.tscn" type="PackedScene" id=11]
+[ext_resource path="res://entities/elements/Earth.tscn" type="PackedScene" id=12]
+[ext_resource path="res://entities/elements/Fire.tscn" type="PackedScene" id=13]
+[ext_resource path="res://entities/elements/Light.tscn" type="PackedScene" id=14]
+[ext_resource path="res://entities/elements/Thunder.tscn" type="PackedScene" id=15]
+[ext_resource path="res://entities/elements/Water.tscn" type="PackedScene" id=16]
+[ext_resource path="res://theme.tres" type="Theme" id=17]
+[ext_resource path="res://levels/UI.gd" type="Script" id=18]
+[ext_resource path="res://sprites/UI/submit_normal.png" type="Texture" id=19]
+[ext_resource path="res://sprites/UI/submit_clicked.png" type="Texture" id=20]
+[ext_resource path="res://sprites/UI/submit_hover.png" type="Texture" id=21]
+[ext_resource path="res://sprites/UI/cancel_normal.png" type="Texture" id=22]
+[ext_resource path="res://sprites/UI/cancel_clicked.png" type="Texture" id=23]
+[ext_resource path="res://sprites/UI/cancel_hover.png" type="Texture" id=24]
+[ext_resource path="res://sprites/UI/order.png" type="Texture" id=25]
+[ext_resource path="res://sprites/UI/scroll.png" type="Texture" id=26]
+[ext_resource path="res://sprites/UI/reject.png" type="Texture" id=27]
+[ext_resource path="res://sprites/UI/reject_clicked.png" type="Texture" id=28]
+[ext_resource path="res://sprites/UI/reject_hover.png" type="Texture" id=29]
+[ext_resource path="res://sprites/UI/result.png" type="Texture" id=30]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -96,6 +57,7 @@ __meta__ = {
 
 [node name="Shop" type="Node2D" parent="."]
 editor/display_folded = true
+visible = false
 position = Vector2( 93.3085, -616.224 )
 
 [node name="customer" type="Sprite" parent="Shop"]
@@ -107,13 +69,16 @@ texture = ExtResource( 4 )
 position = Vector2( 972.253, 1206.75 )
 texture = ExtResource( 5 )
 
-[node name="Customer" parent="." instance=ExtResource( 6 )]
+[node name="Warlock" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1010.84, 603.695 )
+
+[node name="Customer" parent="." instance=ExtResource( 7 )]
 position = Vector2( -160, 624 )
 distance = 700
 
 [node name="SpellBelt" type="Sprite" parent="."]
 position = Vector2( 1.77319, 743.865 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -121,7 +86,7 @@ __meta__ = {
 
 [node name="Spells" type="Node2D" parent="."]
 editor/display_folded = true
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="Slots" type="Node2D" parent="Spells"]
 
@@ -136,27 +101,26 @@ position = Vector2( 1034.17, 1006.95 )
 
 [node name="belt_eyes" type="Sprite" parent="Spells"]
 position = Vector2( 789.527, 1001.56 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="Elements" type="Node2D" parent="."]
-editor/display_folded = true
 
-[node name="Dark" parent="Elements" instance=ExtResource( 10 )]
+[node name="Dark" parent="Elements" instance=ExtResource( 11 )]
 position = Vector2( 851.467, 1713.39 )
 
-[node name="Earth" parent="Elements" instance=ExtResource( 11 )]
+[node name="Earth" parent="Elements" instance=ExtResource( 12 )]
 position = Vector2( 1040.03, 1944.55 )
 
-[node name="Fire" parent="Elements" instance=ExtResource( 12 )]
+[node name="Fire" parent="Elements" instance=ExtResource( 13 )]
 position = Vector2( 563.042, 1633.58 )
 
-[node name="Light" parent="Elements" instance=ExtResource( 13 )]
+[node name="Light" parent="Elements" instance=ExtResource( 14 )]
 position = Vector2( 838.166, 1446.64 )
 
-[node name="Thunder" parent="Elements" instance=ExtResource( 14 )]
+[node name="Thunder" parent="Elements" instance=ExtResource( 15 )]
 position = Vector2( 671.237, 1961.12 )
 
-[node name="Water" parent="Elements" instance=ExtResource( 15 )]
+[node name="Water" parent="Elements" instance=ExtResource( 16 )]
 position = Vector2( 1134.8, 1627.15 )
 
 [node name="UI" type="Control" parent="."]
@@ -164,8 +128,8 @@ margin_left = 249.113
 margin_top = 1440.89
 margin_right = 289.112
 margin_bottom = 1480.89
-theme = ExtResource( 16 )
-script = ExtResource( 17 )
+theme = ExtResource( 17 )
+script = ExtResource( 18 )
 
 [node name="Timer" type="Label" parent="UI"]
 margin_left = 272.986
@@ -189,39 +153,32 @@ valign = 1
 [node name="Submit" type="TextureButton" parent="UI"]
 margin_left = 983.627
 margin_top = -141.907
-margin_right = 1156.63
-margin_bottom = -26.9066
-rect_scale = Vector2( 2.20476, 2.20476 )
-texture_normal = ExtResource( 18 )
+margin_right = 1407.63
+margin_bottom = 113.093
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 20 )
+texture_hover = ExtResource( 21 )
 
 [node name="Cancel" type="TextureButton" parent="UI"]
-margin_left = -194.542
-margin_top = -120.28
-margin_right = -38.5421
-margin_bottom = -12.2803
-rect_scale = Vector2( 2.40476, 2.40476 )
-texture_normal = ExtResource( 19 )
-
-[node name="Cancel2" type="TextureButton" parent="UI"]
-margin_left = -194.542
-margin_top = -120.28
-margin_right = -38.5421
-margin_bottom = -12.2803
-rect_scale = Vector2( 2.49873, 2.56532 )
-texture_normal = ExtResource( 19 )
+margin_left = -196.054
+margin_top = -127.841
+margin_right = 174.946
+margin_bottom = 143.159
+texture_normal = ExtResource( 22 )
+texture_pressed = ExtResource( 23 )
+texture_hover = ExtResource( 24 )
 
 [node name="Request" type="Control" parent="UI"]
-editor/display_folded = true
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="order" type="Sprite" parent="UI/Request"]
 position = Vector2( 50.25, -1153.7 )
-texture = ExtResource( 20 )
+texture = ExtResource( 25 )
 
 [node name="scroll" type="Sprite" parent="UI/Request"]
 position = Vector2( -47.4848, -1051.68 )
-texture = ExtResource( 21 )
+texture = ExtResource( 26 )
 
 [node name="Name" type="Label" parent="UI/Request"]
 margin_left = -111.648
@@ -238,13 +195,11 @@ margin_left = 116.934
 margin_top = -1127.08
 margin_right = 201.934
 margin_bottom = -1039.08
-rect_scale = Vector2( 0.968722, 0.968722 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource( 22 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Request"]
-anims/idle = SubResource( 1 )
+texture_normal = ExtResource( 27 )
+texture_pressed = ExtResource( 28 )
+texture_hover = ExtResource( 29 )
 
 [node name="Result" type="Control" parent="UI"]
 editor/display_folded = true
@@ -254,11 +209,11 @@ margin_bottom = 40.0
 
 [node name="result" type="Sprite" parent="UI/Result"]
 position = Vector2( 1228.09, -1206.32 )
-texture = ExtResource( 23 )
+texture = ExtResource( 30 )
 
 [node name="scroll2" type="Sprite" parent="UI/Result"]
 position = Vector2( 1230.27, -1137.67 )
-texture = ExtResource( 21 )
+texture = ExtResource( 26 )
 
 [node name="Name" type="Label" parent="UI/Result"]
 margin_left = 1078.0
@@ -286,9 +241,6 @@ text = "Raise the Dead"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="UI"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
-anims/idle = SubResource( 2 )
-
 [node name="RequestTimer" type="Timer" parent="."]
 wait_time = 0.5
 
@@ -304,7 +256,5 @@ wait_time = 60.0
 [connection signal="pressed" from="UI/Submit" to="Spells" method="submit"]
 [connection signal="pressed" from="UI/Cancel" to="UI" method="_on_Cancel_pressed"]
 [connection signal="pressed" from="UI/Cancel" to="Spells" method="cancel"]
-[connection signal="pressed" from="UI/Cancel2" to="UI" method="_on_Cancel_pressed"]
-[connection signal="pressed" from="UI/Cancel2" to="Spells" method="cancel"]
 [connection signal="pressed" from="UI/Request/Reject" to="UI" method="_on_Reject_pressed"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]
