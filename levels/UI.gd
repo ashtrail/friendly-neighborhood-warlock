@@ -3,7 +3,7 @@ extends Control
 signal request_rejected()
 
 func show_request(scroll):
-	$Request/Name.text = scroll.name
+	$Request/Name.text = scroll.name + " (" + str(scroll.spells.size()) + ")" 
 	$Request.visible = true
 
 func hide_request():

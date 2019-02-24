@@ -1,5 +1,6 @@
 extends Node
 
+#warning-ignore:unused_class_variable
 var score : int = 0
 const required_score : int = 200
 

@@ -157,8 +157,6 @@ rect_scale = Vector2( 2.49873, 2.56532 )
 texture_normal = ExtResource( 19 )
 
 [node name="Request" type="Control" parent="UI"]
-editor/display_folded = true
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -167,7 +165,7 @@ position = Vector2( 50.25, -1153.7 )
 texture = ExtResource( 20 )
 
 [node name="scroll" type="Sprite" parent="UI/Request"]
-position = Vector2( -17.2415, -1071.34 )
+position = Vector2( -47.4848, -1051.68 )
 texture = ExtResource( 21 )
 
 [node name="Name" type="Label" parent="UI/Request"]
