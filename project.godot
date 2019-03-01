@@ -18,7 +18,7 @@ _global_script_class_icons={
 config/name="Your Friendly Neighborhood Warlock"
 run/main_scene="res://levels/Splash.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
+config/icon="res://godot.png"
 
 [autoload]
 
